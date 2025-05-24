@@ -4,10 +4,6 @@ const socket = io("ws://localhost:3000", {
   reconnectionDelayMax: 10000,
 });
 
-socket.connect()
-
-socket.on("message", (event) => {
-    console.log(event)
-})
+console.log(socket.connect())
 
 export default socket

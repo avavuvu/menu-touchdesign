@@ -1,6 +1,9 @@
-import { Server } from "socket.io"
+
 import { createServer } from "node:http"
 import { parse } from "yaml"
+import express from "express"
+import http from "http"
+import { Server } from "socket.io"
 
 const file = Bun.file("./config/testdata.yaml")
 const yamlData = await file.text()
@@ -19,53 +22,52 @@ type Config = {
 const config: Config = parse(yamlData)["config"]
 
 const items = Object.entries(config.items)
-    .flatMap(([course, items]) => 
+    .flatMap(([course, items]) =>
         items.map(item => ({
             name: item,
             course,
         }))
     )
 
-const httpServer = createServer()
+const app = express();
+const httpServer = http.createServer(app);
+
+// Proper CORS middleware for Express
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
+
+// Your JSON endpoint
+app.get('/api', (req, res) => {
+    res.json({
+        items: config.items
+    });
+});
+
+// Socket.IO setup
 const io = new Server(httpServer, {
     cors: {
         origin: "*",
         methods: ["GET", "POST"]
     }
-})
+});
 
-io.on("connection", (socket) => {
-    console.log("Someone connected")
+io.on('connection', (socket) => {
+    console.log('Client connected')
+    socket.on("make order", (order) => {
+        console.log(JSON.stringify(order))
 
-    socket.on("echo", (event) => {
-        io.sockets.emit("echo", `echo: ${event}`)
+        amount ++
+
+        console.log(amount)
     })
-})
+});
 
-setInterval(() => {
-    const { course, name } = items[Math.floor(Math.random() * items.length)]
-    const price = Math.floor(Math.random() * 20)
-
-    const username = config.names[Math.floor(Math.random() * config.names.length)]
-
-    console.log(`
-Creating a new order from ${username},
-\t ${name}
-\t ${course} 
-\t $${String(price).concat(".00")}
-        `)
-
-    io.sockets.emit("order", {
-        username: username,
-        order: {
-            course,
-            item: name,
-            price
-        }
-    })
-}, config.orderFrequencyMs)
-
+let amount = 0
 
 httpServer.listen(3000, () => {
-    console.log("listening on http://localhost:3000")
-})
+    console.log('Server running on port 3000');
+});

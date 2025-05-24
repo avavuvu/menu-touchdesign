@@ -1,5 +1,5 @@
 config:
-    orderFrequencyMs: 12000
+    orderFrequencyMs: 10000
     names: [
         Erica,
         Susan,
@@ -30,33 +30,90 @@ config:
     ]
     items: 
         entree:
-            - Kiss (3 serves)
-            - Twink
-            - Trio of dips 
-            - Assortment of participation medals
-            - Glass brick
-            - A dozen oysters
+            - name: Kiss (3 serves)
+              description:
+                Artisanal kiss served warm, with included reach-around
+              price: 12
+              addons:
+                - price: 20
+                  description: "With a bit of tongue :P"
+                  name: "Tongue"
+            - name: Twink
+              price: 12
+              description: ""
+              addons:
+                - price: 20
+                  description: "With a bit of tongue :P"
+                  name: "Tongue"
+            - name: Trio of dips 
+              price: 12
+              description: ""
+            - name: Assortment of participation medals
+              price: 12
+              description: ""
+            - name: Glass brick
+              price: 12
+              description: ""
+            - name: A dozen oysters
+              price: 12
+              description: ""
         main:
-            - Wired headphones
-            - Insurmountable feeling of guilt
-            - Cottees cordial (undiluted)
-            - Unsuccessful Hinge date
-            - Hot chips
-            - Hardcover edition of War and Peace
+            - name: Wired headphones
+              price: 1
+              description: ""
+            - name: Insurmountable feeling of guilt
+              price: 1
+              description: ""
+            - name: Cottees cordial (undiluted)
+              price: 1
+              description: ""
+            - name: Unsuccessful Hinge date
+              price: 1
+              description: ""
+            - name: Hot chips
+              price: 1
+              description: ""
+            - name: Hardcover edition of War and Peace
+              price: 1
+              description: ""
         dessert:
-            - Tiramisu 
-            - A good cry
-            - Party mix (bananas only)
-            - Nang
-            - MILF or DILF depending on what's in season
-            - Fredo icecream cake (hot)
+            - name: Tiramisu 
+              price: 1
+              description: ""
+            - name: A good cry
+              price: 1
+              description: ""
+            - name: Party mix (bananas only)
+              price: 1
+              description: ""
+            - name: Nang
+              price: 1
+              description: ""
+            - name: MILF or DILF depending on what's in season
+              price: 1
+              description: ""
+            - name: Fredo icecream cake (hot)
+              price: 1
+              description: ""
         drinks:
-            - Milk (source undisclosed) 
-            - Goon bag 
-            - Unfiltered Yarra river water
-            - Your mums tears
-            - Exhaust fumes
-            - Negroni
+            - name: Milk (source undisclosed) 
+              price: 1
+              description: ""
+            - name: Goon bag 
+              price: 1
+              description: ""
+            - name: Unfiltered Yarra river water
+              price: 1
+              description: ""
+            - name: Your mums tears
+              price: 1
+              description: ""
+            - name: Exhaust fumes
+              price: 1
+              description: ""
+            - name: Negroni
+              price: 1
+              description: ""
 
 
 

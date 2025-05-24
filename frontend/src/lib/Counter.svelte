@@ -5,11 +5,11 @@
     const increment = () => {
         count += 1;
 
-        socket.emit("count", `count: ${count}`)
+        socket.emit("echo", `echo this: ${count}`)
         
     };
 
-    socket.on("global message", (event) => {
+    socket.on("echo", (event) => {
         globalMessage = event
     })
 
