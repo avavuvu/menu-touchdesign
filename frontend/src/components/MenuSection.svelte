@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { Items } from "../lib/types";
     import MenuItem from "./MenuItem.svelte";
+    import SoundItem from "./SoundItem.svelte";
 
     const { items }: { items: Items } = $props()
 
@@ -18,7 +19,12 @@
 
         <div class="grid grid-cols-1 gap-2">
             {#each itemList as item, index}
-                <MenuItem {item} {index}/>
+                {#if "type" in item}
+                    <SoundItem id={item.id} {index}/>
+                {:else}
+                    <MenuItem {item} {index}/>
+
+                {/if}
             {/each} 
 
         </div>

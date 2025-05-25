@@ -1,0 +1,167 @@
+export const items = {
+    "entree": [
+        {
+            "name": "Kiss (3 serves)",
+            "description": "Best shared with a stranger",
+            "price": 12,
+            "imageUrl": "https://cdn.glitch.global/c5ade2f6-fd06-4d09-bf01-6bca031affdc/kiss1.jpg?v=1747877588001",
+            "addons": [
+                {
+                    "price": 20,
+                    "description": "With a bit of tongue :P",
+                    "name": "Tongue"
+                }
+            ]
+        },
+        {
+            "name": "Twink",
+            "price": 12,
+            "description": "Deceptively filling",
+            "imageUrl": "https://cdn.glitch.global/c5ade2f6-fd06-4d09-bf01-6bca031affdc/twink.png?v=1747887323324"
+        },
+        {
+            "type": "sound",
+            "id": "button1"
+        },
+        {
+            "name": "Trio of dips",
+            "price": 12,
+            "imageUrl": "https://cdn.glitch.global/c5ade2f6-fd06-4d09-bf01-6bca031affdc/dips.jpg?v=1747882133302",
+            "description": "Double dipping encouraged"
+        },
+        {
+            "name": "A punch on",
+            "price": 12,
+            "description": "We are not to be held liable for this"
+        },
+        {
+            "type": "sound",
+            "id": "button2"
+        },
+        {
+            "name": "Crumb of attention",
+            "price": 12,
+            "description": "But no worries if not!"
+        },
+        {
+            "name": "Mukbang ASMR",
+            "price": 12,
+            "description": "Are you ok?"
+        }
+    ],
+    "main": [
+        {
+            "name": "Insurmountable feeling of guilt",
+            "price": 1,
+            "description": "Yikes"
+        },
+        {
+            "name": "3am kebab and chips combo",
+            "price": 1,
+            "description": "You’ve never felt more alive"
+        },
+        {
+            "name": "Influencer apology video",
+            "price": 1,
+            "description": "Not a dry eye in the house"
+        },
+        {
+            "type": "sound",
+            "id": "button3"
+        },
+        {
+            "name": "Unsuccessful Hinge date",
+            "price": 1,
+            "description": "You haven’t been asked a question in 45 minutes"
+        },
+        {
+            "name": "Camel toe",
+            "price": 1,
+            "description": "The evolution of the tabi trend"
+        },
+        {
+            "name": "Break up playlist",
+            "price": 1,
+            "description": "All your exes are here tonight btw"
+        }
+    ],
+    "dessert": [
+        {
+            "name": "Viennetta",
+            "price": 1,
+            "description": "You're feeling generous"
+        },
+        {
+            "name": "A good cry",
+            "price": 1,
+            "description": "Sweet release",
+            "addons": [
+                {
+                    "name": "Waterproof Mascara",
+                    "price": 2.5,
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "type": "sound",
+            "id": "button4"
+        },
+        {
+            "name": "Party mix (bananas only)",
+            "price": 1,
+            "description": "Because you hate yourself"
+        },
+        {
+            "name": "Nang",
+            "price": 1,
+            "description": "Balloon not included"
+        },
+        {
+            "name": "MILF or DILF",
+            "price": 1,
+            "description": "Share your porn search history to receive a special discount"
+        },
+        {
+            "name": "Birthday cake",
+            "price": 24,
+            "description": "Be careful what you wish for…"
+        }
+    ],
+    "drinks": [
+        {
+            "name": "Milk (source undisclosed)",
+            "price": 1,
+            "description": "The drink of villains…and Nicole Kidman"
+        },
+        {
+            "name": "Kombucha (sentient)",
+            "price": 1,
+            "description": "It whispers to you"
+        },
+        {
+            "name": "Unfiltered Yarra river water",
+            "price": 1,
+            "description": "Shaken in a 7/11 slurpee cup"
+        },
+        {
+            "type": "sound",
+            "id": "button5"
+        },
+        {
+            "name": "Your mums tears",
+            "price": 1,
+            "description": "Keep expectations low so nobody gets disappointed"
+        },
+        {
+            "name": "Exhaust fumes",
+            "price": 1,
+            "description": "For legal purposes this a joke"
+        },
+        {
+            "name": "Horchata",
+            "price": 1,
+            "description": "For our lactose intolerant queens"
+        }
+    ]
+}

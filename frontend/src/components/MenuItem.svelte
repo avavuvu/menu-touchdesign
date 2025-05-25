@@ -1,10 +1,10 @@
 <script lang="ts">
     import { addToCart } from "../lib/cartStore.svelte";
-    import type { Addon, Item, ItemReference } from "../lib/types";
+    import type { Addon, MenuItem, ItemReference } from "../lib/types";
 
 
     const { item, index }: {
-        item: Item
+        item: MenuItem
         index: number
     } = $props()
 
@@ -25,14 +25,20 @@
 
 <div class="">
     <div 
-        style:--col-size={"addons" in item ? ".75fr" : ".34fr"}
+        style:--col-size={"addons" in item ? ".75fr" : ".6fr"}
         class:selected={selected} 
         class:reverse={index % 2 === 0}
         class="entry group grid grid-cols-2 border border-black">
         <button
             onclick={() => selected = !selected}
             class:reverse={index % 2 === 0}>
-            <img class="" src="https://placehold.co/500x500" alt="">
+            <div class="w-full aspect-square overflow-hidden">
+                {#if item.imageUrl}
+                    <img class="w-full h-full object-cover" src={item.imageUrl} alt="">
+                {:else}
+                    <img class="" src="https://placehold.co/500x500" alt="">
+                {/if}
+            </div>
         </button>
     
         <button 
@@ -55,8 +61,8 @@
             </span>
         </button>
     
-        <div class="foldout col-span-2 flex flex-col justify-between text-xs">
-            <div class="p-2 h-full">
+        <div class="foldout col-span-2 text-xs">
+            <div class="p-2">
                 {#if "addons" in item}
                     <h3 class="text-left">Extras</h3>
                     <div class="h-full justify-center flex">
@@ -115,6 +121,8 @@
         overflow: hidden;
         min-height: 0;
         transition: transform 0.3s ease, opacity 0.3s ease-in-out;
+        will-change: opacity, transform;
+        contain: layout;
     }
 
     .selected .foldout {

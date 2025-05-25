@@ -3,19 +3,10 @@
     import MenuItem from "./components/MenuItem.svelte";
     import MenuSection from "./components/MenuSection.svelte";
     import PlaceOrder from "./components/PlaceOrder.svelte";
-    import { cart } from "./lib/cartStore.svelte";
-    import { checkOut } from "./lib/order";
-    import type { Item, Items } from "./lib/types";
-    import socket from "./lib/ws";
+    import Slider from "./components/Slider.svelte";
+    import type { Items } from "./lib/types";
 
-    const fetchItems = async () => {
-        const response = await fetch("http://localhost:3000/api", {
-        })
-
-        const { items }: { items: Items} = await response.json()
-
-        return items
-    }
+    import { items } from "./lib/items";
 
 </script>
 
@@ -23,11 +14,9 @@
 
 <Cart/>
 
-{#await fetchItems()}
-    <!--  -->
-{:then items} 
-    <MenuSection {items}/>
-{/await}
+<!-- <Slider/> -->
+
+<MenuSection {items}/>
 
 <PlaceOrder></PlaceOrder>
 
